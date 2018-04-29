@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "New User";
+}
+
+<!DOCTYPE>
+<html>
+<head>
+    <title>New User</title>
+</head>
+<body>
+    <h3>Add New User</h3>
+    <form>
+        <div style="text-align:right">
+            <span>Profile Picture</span><br />
+            <input type="file" name="userImage" />
+        </div>
+        Name: <input type="text" id="txtName" name="txtName" /><br />
+        Login: <input type="text" id="txtLogin" name="txtLogin" /><br />
+        Password: <input type="password" id="txtPassword" name="txtPassword" /><br />
+        Email: <input type="email" id="txtEmail" name="txtEmail" /><br />
+        Gender: <select id="cmbGender" name="cmbGender">
+            <option value="1">Male</option>
+            <option value="2">Female</option>
+            <option value="3">Other</option>
+        </select><br />
+        Address:<textarea id="txtAddress" name="txtAddress"></textarea><br />
+        Age: <input type="text" id="txtAge" name="txtAge" /><br />
+        CNIC: <input type="text" id="txtCnic" name="txtCnic" /><br />
+        DOB: <input type="datetime" id="dateDob" name="dateDob" /><br />
+        Sports: <input type="checkbox" id="chkCricket" name="chkCricket" />Cricket
+        <input type="checkbox" id="chkHockey" name="chkHockey" />Hockey
+        <input type="checkbox" id="chkChess" name="chkChess" />Chess<br />
+        <input type="submit" id="btnCreate" name="btnCreate" value="Create" />
+        <input type="reset" id="btnReset" name="btnReset" value="Reset" />
+    </form> 
+</body>
+</html>
+

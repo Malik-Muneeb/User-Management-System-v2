@@ -12,5 +12,10 @@ namespace User_Management_System.Controllers
         {
             return View();
         }
+
+        public ActionResult newUser()
+        {
+            return View();
+        }
 	}
 }
