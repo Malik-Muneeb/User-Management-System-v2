@@ -7,19 +7,38 @@ namespace User_Management_System.Models
 {
     public class user
     {
-        public String name { get; set; }
-        public String login { get; set; }
-        public String password { get; set; }
-        public String email { get; set; }
-        public String gender { get; set; }
-        public String address { get; set; }
-        public int age { get; set; }
-        public String nic { get; set; }
-        public DateTime dob { get; set; }
-        public bool isCricket { get; set; }
-        public bool isHockey { get; set; }
-        public bool isChess { get; set; }
-        public String imageName { get; set; }
+        public String txtName { get; set; }
+        public String txtLogin { get; set; }
+        public String txtPassword { get; set; }
+        public String txtEmail { get; set; }
+        public String cmbGender { get; set; }
+        public String txtAddress { get; set; }
+        public int txtAge { get; set; }
+        public String txtCnic { get; set; }
+        public DateTime dateDob { get; set; }
+        public bool chkCricket { get; set; }
+        public bool chkHockey { get; set; }
+        public bool chkChess { get; set; }
+        public String userImage { get; set; }
+
+        public String validation()
+        {
+            if (this.txtName == null)
+                return "Must Enter Name";
+            if (this.txtLogin == null)
+                return "Must Enter Login";
+            if (this.txtPassword == null)
+                return "Must Enter Password";
+            if (this.txtEmail == null)
+                return "Must Enter Email";
+            if (this.txtAddress == null)
+                return "Must Enter Address";
+            if (this.txtEmail == null)
+                return "Must Enter Email";
+            if (this.txtCnic == null)
+                return "Must Enter CNIC";
+            return "true";
+        }
 
     }
 }
