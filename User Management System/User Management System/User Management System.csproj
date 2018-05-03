@@ -116,6 +116,7 @@
     <Content Include="Views\home\home.cshtml" />
     <Content Include="Views\admin\login.cshtml" />
     <Content Include="Views\admin\home.cshtml" />
+    <Content Include="Views\Existing\login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -126,7 +127,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="UploadedFiles\" />
-    <Folder Include="Views\Existing\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

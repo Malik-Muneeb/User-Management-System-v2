@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 
@@ -13,13 +12,20 @@
 </head>
 <body>
     <div class="container1 form" style="float:left;">
-        <h1>Admin Login</h1>
-        <form name="loginForm" method="post" action="/admin/login">
+        <h1>User Login</h1>
+        <form name="loginForm" method="post" action="/existing/login">
             Login: <input id="txtLogin" name="txtLogin" value="@ViewBag.txtLogin" /> <br>
             Password: <input id="txtPassword" name="txtPassword" type="password" /> <br>
             <span id="errorSpan" style="color:red">@ViewBag.msg</span>
             <input type="submit" name="btnLogin" id="btnLogin" value="Login" />
             <input class="cancelbtn" type="reset" value="cancel" id="btnReset" onclick="location.href = '../home/menu';" />
+        </form>
+
+        <form name="resetForm" method="post" action="/existing/reset">
+            <span>Forgot Password?</span><br /><br />
+            Email: <input id="txtEmail" name="txtEmail" value="@ViewBag.txtEmail" /> <br>
+            <span id="errorSpan" style="color:red">@ViewBag.msg</span>
+            <input type="submit" name="btnResetPass" id="btnResetPass" value="Reset Password" />
         </form>
     </div>
 </body>
