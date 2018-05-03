@@ -59,5 +59,26 @@ namespace User_Management_System.Models
             }
             return false;
         }
+
+        public user getUserByEmail(String email)
+        {
+            String connString = @"Data Source=.\SQLEXPRESS2012; Initial Catalog=Assignment4; Integrated Security=True; Persist Security Info=True;";
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                conn.Open();
+                String sqlQuery = String.Format(@"Select * from dbo.users where email=@Email");
+
+                SqlCommand command = new SqlCommand(sqlQuery, conn);
+                command.Parameters.AddWithValue("@Email", email);
+                SqlDataReader reader = command.ExecuteReader();
+                user userObj = new user();
+                if (reader.Read())
+                {
+                    userObj.txtName = reader.GetString(reader.GetOrdinal("name"));
+                    userObj.userImage = reader.GetString(reader.GetOrdinal("imagename"));
+                }
+                return userObj;
+            }
+        }
     }
 }

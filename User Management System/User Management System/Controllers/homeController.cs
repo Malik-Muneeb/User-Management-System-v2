@@ -14,6 +14,17 @@ namespace User_Management_System.Controllers
             return View();
         }
 
+        public ActionResult home()
+        {
+            String email = Convert.ToString(Request.QueryString["email"]);
+            userDAO userObjDao = new userDAO();
+            user userObj = userObjDao.getUserByEmail(email);
+            ViewBag.txtName = userObj.txtName;
+            //String applicationBasePath=System.IO.Path.GetDirectoryName()
+            ViewBag.userImage = userObj.userImage;
+            return View();
+        }
+
         public ActionResult newUser()
         {
             return View();
@@ -67,7 +78,7 @@ namespace User_Management_System.Controllers
                 obj.userImage = uniqueName;
                 if (userObjDao.save(obj))
                 {
-                    return View();
+                    return Redirect("/home/home?email="+ViewBag.txtEmail);
                 }
             }
             else
