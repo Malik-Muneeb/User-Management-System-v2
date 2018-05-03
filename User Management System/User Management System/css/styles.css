@@ -104,18 +104,7 @@ li a:hover:not(.active) {
     background-color: #4CAF50;
 }
 
-.rolePermission {
-    border: 3px solid #f1f1f1;
-    float:center;
-    margin-right: 800px;
-}
 
-.roleProperty{
-    background-color: #4CAF50;
-    color: white;
-    padding:5px;
-    margin-top:10px;
-}
 
 #myTable {
     float:left;

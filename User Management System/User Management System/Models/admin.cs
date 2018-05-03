@@ -9,7 +9,7 @@ namespace User_Management_System.Models
     {
         public int adminId { get; set; }
         public string adminName { get; set; }
-        public string login { get; set; }
-        public string password { get; set; }
+        public string txtLogin { get; set; }
+        public string txtPassword { get; set; }
     }
 }

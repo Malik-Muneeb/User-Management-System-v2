@@ -109,5 +109,40 @@ namespace User_Management_System.Models
                 return userObj;
             }
         }
+
+        public List<user> getAllUsers()
+        {
+            String connString = @"Data Source=.\SQLEXPRESS2012; Initial Catalog=Assignment4; Integrated Security=True; Persist Security Info=True;";
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                conn.Open();
+                String sqlQuery = "Select * from dbo.users";
+                SqlCommand command = new SqlCommand(sqlQuery, conn);
+                SqlDataReader reader = command.ExecuteReader();
+                List<user> userList = new List<user>();
+
+                while (reader.Read() == true)
+                {
+                    user userObj = new user();
+                    userObj.txtId = reader.GetInt32(reader.GetOrdinal("userid"));
+                    userObj.txtName = reader.GetString(reader.GetOrdinal("name"));
+                    userObj.txtLogin = reader.GetString(reader.GetOrdinal("login"));
+                    userObj.txtPassword = reader.GetString(reader.GetOrdinal("password"));
+                    userObj.txtEmail = reader.GetString(reader.GetOrdinal("email"));
+                    userObj.cmbGender = reader.GetString(reader.GetOrdinal("gender"));
+                    userObj.txtAddress = reader.GetString(reader.GetOrdinal("address"));
+                    userObj.txtAge = reader.GetInt32(reader.GetOrdinal("age"));
+                    userObj.txtCnic = reader.GetString(reader.GetOrdinal("nic"));
+                    userObj.dateDob = reader.GetDateTime(reader.GetOrdinal("dob"));
+                    userObj.chkCricket = reader.GetBoolean(reader.GetOrdinal("iscricket"));
+                    userObj.chkHockey = reader.GetBoolean(reader.GetOrdinal("hockey"));
+                    userObj.chkChess = reader.GetBoolean(reader.GetOrdinal("chess"));
+                    userObj.userImage = reader.GetString(reader.GetOrdinal("imagename"));
+
+                    userList.Add(userObj);
+                }
+                return userList;
+            }
+        }
     }
 }

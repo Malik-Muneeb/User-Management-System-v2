@@ -1,0 +1,41 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="../../css/styles.css" rel="stylesheet">
+    <title>home</title>
+</head>
+<body>
+    <div>
+        <h3>Users</h3>
+        <table border="1" id="myTable">
+            <tr>
+                <th>User ID</th>
+                <th>NAME</th>
+                <th>LOGIN</th>
+                <th>ADDRESS</th>
+                <th>AGE</th>
+                <th>EDIT</th>
+            </tr>
+            @{
+                foreach (var user in ViewBag.userList)
+                {
+               
+                    <tr>
+                        <td>@user.txtId</td>
+                        <td>@user.txtName</td>
+                        <td>@user.txtLogin</td>
+                        <td>@user.txtAddress</td>
+                        <td>@user.txtAge</td>
+                        <td><a href='@Url.Content("~/home/newUser?email="+@user.txtEmail)'>Edit</a></td>
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+</body>
+</html>

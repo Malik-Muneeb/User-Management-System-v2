@@ -6,11 +6,15 @@
 <html>
 <head>
     <title>Home</title>
+    <link href="../../css/styles.css" rel="stylesheet">
 </head>
 <body>
-    @*<button onclick="location.href = 'www.yoursite.com';" id="myButton" class="float-left submit-button">Home</button>*@
-    <button onclick="location.href = '../home/newUser';">New User</button><br />
-    <button>Existing User</button><br />
-    <button>Admin</button><br />
+    <h1 style="margin:80px 470px">User Management System</h1>
+    <div class="form" style="margin-top:100px">
+        @*<button onclick="location.href = 'www.yoursite.com';" id="myButton" class="float-left submit-button">Home</button>*@
+        <input type="button" value="New User" onclick="location.href = '../home/newUser';"><br />
+        <input type="button" value="Existing User"><br />
+        <input type="button" value="Admin"><br />
+    </div>
 </body>
 </html>
