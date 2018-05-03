@@ -20,9 +20,9 @@ namespace User_Management_System
                 System.Net.Mail.MailMessage mail = new System.Net.Mail.MailMessage();
                 MailAddress to = new MailAddress(toEmail);
                 mail.To.Add(to);
-                MailAddress from = new MailAddress("ead.csf15@gmail.com", "Admin");
+                MailAddress from = new MailAddress("ead.csf15@gmail.com", "UMS");
                 mail.From = from;
-                mail.Subject = "Hello Testing";
+                mail.Subject = "Recovery Code";
                 Random rnd = new Random();
                 num = rnd.Next(1,100000);
                 mail.Body = num.ToString(); 
