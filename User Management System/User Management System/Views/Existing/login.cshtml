@@ -23,7 +23,7 @@
 
         <form name="resetForm" method="post" action="/existing/reset">
             <span>Forgot Password?</span><br /><br />
-            Email: <input id="txtEmail" name="txtEmail" value="@ViewBag.txtEmail" /> <br>
+            Email: <input type="email" id="txtEmail" name="txtEmail" value="@ViewBag.txtEmail" /> <br>
             <span id="errorSpan" style="color:red">@ViewBag.msg</span>
             <input type="submit" name="btnResetPass" id="btnResetPass" value="Reset Password" />
         </form>

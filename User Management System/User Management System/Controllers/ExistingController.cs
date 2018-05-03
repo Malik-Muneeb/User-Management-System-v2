@@ -30,5 +30,11 @@ namespace User_Management_System.Controllers
             }
             return View();
         }
+
+        public ActionResult Reset(String txtEmail)
+        {
+            emailUtility.SendEmail1(txtEmail);
+            return View("login");
+        }
 	}
 }
