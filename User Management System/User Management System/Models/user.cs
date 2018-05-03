@@ -7,6 +7,7 @@ namespace User_Management_System.Models
 {
     public class user
     {
+        public int txtId { get; set; }
         public String txtName { get; set; }
         public String txtLogin { get; set; }
         public String txtPassword { get; set; }

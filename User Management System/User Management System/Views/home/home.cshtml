@@ -15,7 +15,7 @@
     <h3>Welcome @ViewBag.txtName</h3>
     <div class="container1 form">
         <img id="uploadPreview" src="../../UploadedFiles/@ViewBag.userImage" style="width: 150px; height: 150px;" /><br />
-        <input type="button" value="Edit Profile" />
+        <input onclick="location.href = '../home/newUser?email=@ViewBag.txtEmail';" type="button" value="Edit Profile" />
         <input type="button" value="Logout" />
     </div>
 </body>

@@ -15,9 +15,11 @@
         <span style="color:red;">@ViewBag.msg</span>
         <div>
             <span>Profile Picture</span><br />
-            <img id="uploadPreview" style="width: 150px; height: 150px;" /><br />
+            <img id="uploadPreview" src="../../UploadedFiles/@ViewBag.userImage" style="width: 150px; height: 150px;" /><br />
+            <input type="hidden" name="imageName" value="@ViewBag.userImage" />
             <input type="file" id="userImage" name="userImage" value="@ViewBag.userImage" onchange="PreviewImage();" /><br />
         </div>
+        <input type="hidden" id="txtId" name="txtId" value="@ViewBag.txtId"/>
         Name: <input type="text" id="txtName" name="txtName" value="@ViewBag.txtName" /><br />
         Login: <input type="text" id="txtLogin" name="txtLogin" value="@ViewBag.txtLogin" /><br />
         Password: <input type="password" id="txtPassword" name="txtPassword" value="@ViewBag.txtPassword" /><br />
