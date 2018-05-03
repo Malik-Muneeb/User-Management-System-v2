@@ -6,37 +6,47 @@ window.onload = function () {
 }
 
 function validations() {
-
-    if ($("txtName").val() == "") {
+   
+    if ($("#txtName").val() == "") {
         alert("First Enter Name!");
         return false;
     }
-    if ($("txtLogin").val() == "") {
+    if ($("#txtLogin").val() == "") {
         alert("First Enter Login!");
         return false;
     }
-    if ($("txtPassword").val() == "" || $("txtPassword").length < 8) {
+    if ($("#txtPassword").val() == "" && $("#txtPassword").length < 8) {
         alert("First Enter Password and password greater than 8!");
         return false;
     }
-    if ($("txtEmail").val() == "") {
+    if ($("#txtEmail").val() == "") {
         alert("First Enter Email!");
         return false;
     }
-    if ($("txtAddress").val() == "") {
+    if ($("#txtAddress").val() == "") {
         alert("First Enter Address!");
         return false;
     }
-    if ($("txtAge").val() == 0) {
+    if ($("#txtAge").val() == 0) {
         alert("First Enter Age!");
         return false;
     }
-    if ($("txtCnic").val() == "") {
+    if ($("#txtCnic").val() == "") {
         alert("First Enter CNIC");
         return false;
     }
-    if ($("userImage").val == "") {
+    if ($("#userImage").val == "") {
         alert("First Select Image!");
         return false;
     }
+    return true;
 }
+
+function PreviewImage() {
+    var oFReader = new FileReader();
+    oFReader.readAsDataURL(document.getElementById("userImage").files[0]);
+
+    oFReader.onload = function (oFREvent) {
+        document.getElementById("uploadPreview").src = oFREvent.target.result;
+    };
+};

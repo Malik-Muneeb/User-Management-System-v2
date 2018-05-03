@@ -24,19 +24,19 @@ namespace User_Management_System.Models
         public String validation()
         {
             if (this.txtName == null)
-                return "Must Enter Name";
+                return "Must Enter Name and other fields if empty";
             if (this.txtLogin == null)
-                return "Must Enter Login";
+                return "Must Enter Login and other fields if empty";
             if (this.txtPassword == null)
-                return "Must Enter Password";
+                return "Must Enter Password and other fields if empty";
             if (this.txtEmail == null)
-                return "Must Enter Email";
+                return "Must Enter Email and other fields if empty";
             if (this.txtAddress == null)
-                return "Must Enter Address";
+                return "Must Enter Address and other fields if empty";
             if (this.txtEmail == null)
-                return "Must Enter Email";
+                return "Must Enter Email and other fields if empty";
             if (this.txtCnic == null)
-                return "Must Enter CNIC";
+                return "Must Enter CNIC and other fields if empty";
             return "true";
         }
 

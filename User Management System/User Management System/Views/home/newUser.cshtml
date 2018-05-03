@@ -1,20 +1,22 @@
 ﻿@{
     ViewBag.Title = "New User";
 }
-
 <!DOCTYPE>
 <html>
 <head>
     <title>New User</title>
-    <script src="Scripts/jquery-3.2.1.min.js" type="text/javascript"></script>
-    <script src="Srcipts/newUserFunction.js"></script>
+    <script src="../../Scripts/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <link href="../../css/styles.css" rel="stylesheet">
+    <script src="../../Scripts/newUserFunctions.js" type="text/javascript"></script>
 </head>
 <body>
     <h3>Add New User</h3>
-    <form method="post" action="../home/newUser" enctype="multipart/form-data">
-        <div style="text-align:right">
+    <form method="post" class="container1 form" action="../home/newUser" enctype="multipart/form-data">
+        <span style="color:red;">@ViewBag.msg</span>
+        <div>
             <span>Profile Picture</span><br />
-            <input type="file" name="userImage" value="@ViewBag.userImage"/>
+            <img id="uploadPreview" style="width: 150px; height: 150px;" /><br />
+            <input type="file" id="userImage" name="userImage" value="@ViewBag.userImage" onchange="PreviewImage();" /><br />
         </div>
         Name: <input type="text" id="txtName" name="txtName" value="@ViewBag.txtName" /><br />
         Login: <input type="text" id="txtLogin" name="txtLogin" value="@ViewBag.txtLogin" /><br />
@@ -24,25 +26,25 @@
             @{
                 if (ViewBag.cmbGender == "1")
                 {
-                <option value="1" selected>Male</option>}
+                    <option value="1" selected>Male</option>}
                 else
                 {
-                <option value="1">Male</option>}
+                    <option value="1">Male</option>}
                 if (ViewBag.cmbGender == "2")
                 {
-                <option value="2" selected>Female</option>}
+                    <option value="2" selected>Female</option>}
                 else
                 {
-                <option value="2">Female</option>}
+                    <option value="2">Female</option>}
                 if (ViewBag.cmbGender == "3")
                 {
-                <option value="3" selected>Other</option>}
+                    <option value="3" selected>Other</option>}
                 else
                 {
-                <option value="3">Other</option>}
+                    <option value="3">Other</option>}
             }
         </select><br />
-        Address:<textarea id="txtAddress" name="txtAddress">@ViewBag.txtAddress</textarea><br />
+        Address:<textarea rows="6" cols="93" id="txtAddress" name="txtAddress">@ViewBag.txtAddress</textarea><br />
         Age: <select id="txtAge" name="txtAge">
             @{
                 for (int i = 1; i <= 200; i++)
@@ -59,18 +61,42 @@
                 }
             }
         </select><br />
-        CNIC: <input type="text" id="txtCnic" name="txtCnic" value="@ViewBag.txtCnic" /><br />
+        CNIC: <input type="text" id="txtCnic" name="txtCnic" data-inputmask="'mask': '99999-9999999-9'" value="@ViewBag.txtCnic" /><br />
         DOB: <input type="date" id="dateDob" name="dateDob" value="@ViewBag.dateDob" /><br />
         Sports:
-        <input type="checkbox" id="chkCricket" name="chkCricket" value="true" />Cricket
+        @{
+            if (ViewBag.chkCricket == true)
+            {
+                <input type="checkbox" id="chkCricket" name="chkCricket" value="true" checked /><span>Cricket</span>
+            }
+            else
+            {
+                <input type="checkbox" id="chkCricket" name="chkCricket" value="true" /><span>Cricket</span>
+            }
+            if (ViewBag.chkHockey == true)
+            {
+                <input type="checkbox" id="chkHockey" name="chkHockey" value="true" checked /><span>Hockey</span>
+            }
+            else
+            {
+                <input type="checkbox" id="chkHockey" name="chkHockey" value="true" /><span>Hockey</span>
+            }
+            if (ViewBag.chkChess == true)
+            {
+                <input type="checkbox" id="chkChess" name="chkChess" value="true" checked /><span>Chess</span><br />
+            }
+            else
+            {
+                <input type="checkbox" id="chkChess" name="chkChess" value="true" /><span>Chess</span><br />
+            }
+
+        }
         <input type="hidden" value="false" name="chkCricket" />
-        <input type="checkbox" id="chkHockey" name="chkHockey" value="true" />Hockey
         <input type="hidden" value="false" name="chkHockey" />
-        <input type="checkbox" id="chkChess" name="chkChess" value="true" />Chess<br />
         <input type="hidden" value="false" name="chkChess" />
         <input type="submit" id="btnCreate" name="btnCreate" value="Create" />
-        <input type="reset" id="btnReset" name="btnReset" value="Reset" />
-        <span style="color:red">@ViewBag.returnMsg</span>
+        <input type="reset" class="cancelBtn" id="btnReset" name="btnReset" value="Reset" /><br />
     </form>
+
 </body>
 </html>
