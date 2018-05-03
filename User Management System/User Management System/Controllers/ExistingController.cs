@@ -33,8 +33,27 @@ namespace User_Management_System.Controllers
 
         public ActionResult Reset(String txtEmail)
         {
-            emailUtility.SendEmail1(txtEmail);
-            return View("login");
+            int num=emailUtility.SendEmail1(txtEmail);
+            ViewBag.code = num;
+            ViewBag.email = txtEmail;
+            return View();
+        }
+
+        public ActionResult match(String txtCode)
+        {
+            String code = Request["code"];
+            if(txtCode==code)
+            {
+                String email=Request["email"];
+                return Redirect("/home/home?email=" + email);
+            }
+            else
+            {
+                ViewBag.code = code;
+                ViewBag.email = Request["email"];
+                ViewBag.msg = "Wrong Code";
+                return View("reset");
+            }
         }
 	}
 }

@@ -1,0 +1,24 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="../../css/styles.css" rel="stylesheet">
+    <title>reset</title>
+</head>
+<body>
+    <form class="container1 form"  name="resetForm" method="post" action="/existing/match">
+        <span>Enter Code</span><br /><br />
+       <input type="text" id="txtCode" name="txtCode" value="@ViewBag.txtCode" /> <br>
+        <input type="hidden" name="code" value="@ViewBag.code" />
+        <input type="hidden" name="email" value="@ViewBag.email" />
+        <span id="errorSpan" style="color:red">@ViewBag.msg</span>
+        <input type="submit" name="btnResetPass" id="btnResetPass" value="Reset Password" />
+    </form>
+</body>
+</html>

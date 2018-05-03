@@ -13,7 +13,7 @@ namespace User_Management_System
         public static int num{ get; set; }
 
         
-        public static Boolean SendEmail1(String toEmail)
+        public static int SendEmail1(String toEmail)
         {
             try
             {
@@ -24,7 +24,7 @@ namespace User_Management_System
                 mail.From = from;
                 mail.Subject = "Hello Testing";
                 Random rnd = new Random();
-                num = rnd.Next(100000);
+                num = rnd.Next(1,100000);
                 mail.Body = num.ToString(); 
                 var sc = new SmtpClient("smtp.gmail.com", 587)
                 {
@@ -33,11 +33,11 @@ namespace User_Management_System
                 };
 
                 sc.Send(mail);
-                return true;
+                return num;
             }
             catch (Exception ex)
             {
-                return false;
+                return 0;
             }
         }
     }

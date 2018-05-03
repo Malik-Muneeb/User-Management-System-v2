@@ -118,6 +118,7 @@
     <Content Include="Views\admin\login.cshtml" />
     <Content Include="Views\admin\home.cshtml" />
     <Content Include="Views\Existing\login.cshtml" />
+    <Content Include="Views\Existing\reset.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
